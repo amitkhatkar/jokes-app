@@ -135,6 +135,6 @@ This is a private repository. All rights reserved. See [LICENSE](LICENSE) for de
 
 ## 📞 Contact
 
-Amit Khatkar - [@amitkhatkar](https://github.com/amitkhatkar)
+Amit Khatkar Ji - [@amitkhatkar](https://github.com/amitkhatkar)
 
 Project Link: [https://github.com/amitkhatkar/jokes-app](https://github.com/amitkhatkar/jokes-app)
