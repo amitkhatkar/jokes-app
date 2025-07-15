@@ -1,0 +1,55 @@
+<div class="joke-container">
+  <header class="joke-header">
+    <h1>🃏 Joke Generator</h1>
+    <p>Get your daily dose of laughter!</p>
+  </header>
+
+  <div class="category-selector">
+    <label for="category">Category:</label>
+    <select 
+      id="category" 
+      [value]="selectedCategory()" 
+      (change)="onCategoryChange($any($event.target).value)">
+      @for (category of categories(); track category) {
+        <option [value]="category">
+          {{ category.charAt(0).toUpperCase() + category.slice(1) }}
+        </option>
+      }
+    </select>
+  </div>
+
+  <div class="joke-card">
+    @if (isLoading()) {
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading a great joke...</p>
+      </div>
+    } @else if (currentJoke()) {
+      <div class="joke-content">
+        <div class="joke-setup">
+          <h2>{{ currentJoke()?.setup }}</h2>
+        </div>
+        
+        @if (showPunchline()) {
+          <div class="joke-punchline">
+            <p>{{ currentJoke()?.punchline }}</p>
+          </div>
+        } @else {
+          <button class="reveal-btn" (click)="revealPunchline()">
+            🤔 Reveal Punchline
+          </button>
+        }
+        
+        <div class="joke-category">
+          <span class="category-tag">{{ currentJoke()?.category }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="actions">
+    <button class="next-joke-btn" (click)="loadRandomJoke()" [disabled]="isLoading()">
+      {{ isLoading() ? 'Loading...' : 'Next Joke 🎲' }}
+    </button>
+  </div>
+</div>
