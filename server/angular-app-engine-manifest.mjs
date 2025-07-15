@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: 'https://amitkhatkar.github.io/jokes-app',
   supportedLocales: {
   "en-US": ""
 },
